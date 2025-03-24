@@ -1,0 +1,35 @@
+import bruno.kmp.domain.model.Gender;
+import bruno.kmp.domain.model.Status;
+
+CREATE TABLE CharactersCache(
+    id INTEGER NOT NULL PRIMARY KEY,
+    name TEXT NOT NULL,
+    status TEXT AS Status NOT NULL,
+    species TEXT NOT NULL,
+    gender TEXT AS Gender NOT NULL,
+    type TEXT NOT NULL,
+    origin TEXT NOT NULL,
+    location TEXT NOT NULL,
+    image TEXT NOT NULL,
+    page TEXT NOT NULL
+);
+
+insertCharacter:
+INSERT INTO CharactersCache(
+	id,
+	name,
+	status,
+	species,
+	gender,
+	type,
+	origin,
+	location,
+	image,
+	page
+) VALUES (?,?,?,?,?,?,?,?,?,?);
+
+removeCharacterByPage:
+DELETE FROM CharactersCache WHERE page = ?;
+
+selectAllCharactersByPage:
+SELECT * FROM CharactersCache WHERE page = ?;
