@@ -1,4 +1,3 @@
-# pokedex
 <h2>Estrutura e tecnologias utilizadas no projeto:</h2>
 
 O projeto foi feito utilizando os plugins kotlin multiplatform para
